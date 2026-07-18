@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chirag Chauhan — AI Engineer</title>
+  <meta name="description" content="Chirag Chauhan is an AI engineer building RAG platforms, AI agents, and production backend systems.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000'/><text x='50' y='72' font-size='60' font-family='Arial,sans-serif' font-weight='900' fill='%23fff' text-anchor='middle'>C</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Intro -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <img class="loader__img" id="loaderImg" src="Namaste.png" alt="">
+    <p class="loader__word glitch" id="loaderWord" data-text="नमस्ते">नमस्ते</p>
+  </div>
+
+  <!-- Floating nav -->
+  <header class="nav" id="nav">
+    <nav class="nav__pill" aria-label="Primary">
+      <a href="#about" data-spy="about">About</a>
+      <a href="#work" data-spy="work">Work</a>
+      <a href="#skills" data-spy="skills">Skills</a>
+      <a href="#experience" data-spy="experience">Experience</a>
+      <a href="#contact" data-spy="contact">Contact</a>
+      <a class="nav__resume" href="Chirag_Chauhan_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <p class="hero__meta mono">SYSTEMS > DEMOS</p>
+      <div class="hero__row">
+        <h1 class="hero__title" aria-label="Chirag Chauhan">
+          <span class="hero__line"><span>CHIRAG</span></span>
+          <span class="hero__line hero__line--ghost"><span>CHAUHAN</span></span>
+        </h1>
+        <div class="hero__visual" id="heroVisual" aria-hidden="true">
+          <img src="Hello.png" alt="">
+        </div>
+      </div>
+      <div class="marquee hero__marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Always building — Always learning —&nbsp;</span><span>Always building — Always learning —&nbsp;</span>
+          <span>Always building — Always learning —&nbsp;</span><span>Always building — Always learning —&nbsp;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="manifesto" id="about">
+      <header class="chapter">
+        <h2 class="chapter__title chapter__title--glitch" id="aboutTitle" data-text="BUILD THINGS THAT MATTER.">BUILD THINGS <span class="ghost">THAT MATTER.</span></h2>
+      </header>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="workwrap" id="work">
+      <header class="chapter">
+        <h2 class="chapter__title"><span class="chapter__mask"><span>SELECTED</span></span>
+          <span class="chapter__mask"><span class="ghost">WORK</span></span></h2>
+      </header>
+
+      <!-- P1 -->
+      <article class="work">
+        <span class="work__ghost" aria-hidden="true">01</span>
+        <div class="work__reveal"><h3 class="work__title">KNOWLEDGE<br>FORGE</h3></div>
+        <p class="work__tag">Production-grade RAG platform</p>
+        <p class="work__stack mono">FastAPI / React / Pinecone / Supabase / Redis / Docker / Gemini</p>
+        <div class="work__blocks">
+          <div class="work__block">
+            <h4 class="mono">Problem</h4>
+            <p>Teams keep knowledge scattered across PDFs, websites, GitHub repositories and
+              Google Drive. Keyword search can't answer questions — and raw LLMs hallucinate
+              when they can't see the source material.</p>
+          </div>
+          <div class="work__block">
+            <h4 class="mono">Solution</h4>
+            <p>An end-to-end platform that ingests four source types and answers questions
+              with streamed, citation-backed responses. Hybrid retrieval combines vector and
+              keyword search; a cross-encoder reranks candidates before generation — grounded,
+              not guessed.</p>
+          </div>
+          <div class="work__block work__block--arch">
+            <h4 class="mono">Architecture</h4>
+            <div class="arch">
+              <div class="arch__node"><span class="mono">01</span><p>Documents<small>PDF · Web · GitHub · Drive</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">02</span><p>Parser &amp; chunking<small>context-aware splits</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">03</span><p>Embeddings<small>bge-small-en-v1.5</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">04</span><p>Pinecone<small>vector index</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">05</span><p>Hybrid retrieval<small>vector + keyword</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">06</span><p>Cross-encoder rerank<small>precision pass</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">07</span><p>Gemini<small>grounded generation</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">08</span><p>Streaming response<small>with citations</small></p></div>
+            </div>
+            <p>FastAPI with JWT auth. Supabase for users and metadata. Redis for caching.
+              Shipped in Docker.</p>
+          </div>
+          <div class="work__block">
+            <h4 class="mono">Outcome</h4>
+            <p>A production-grade platform — auth, security hardening, cited answers across
+              multi-source knowledge bases. Not a notebook demo.</p>
+          </div>
+        </div>
+        <a class="work__link magnetic" href="https://github.com/chiragchauhan07/KnowledgeForge" target="_blank" rel="noopener">Open on GitHub <span class="work__link-arrow">↗</span></a>
+      </article>
+
+      <!-- P2 -->
+      <article class="work work--alt">
+        <span class="work__ghost" aria-hidden="true">02</span>
+        <div class="work__reveal"><h3 class="work__title">NEXUS<br>TALENT AI</h3></div>
+        <p class="work__tag">Resume intelligence &amp; semantic matching</p>
+        <p class="work__stack mono">Python / Flask / Sentence Transformers / OCR</p>
+        <div class="work__blocks">
+          <div class="work__block">
+            <h4 class="mono">Problem</h4>
+            <p>Keyword ATS filters reject strong candidates because their resume says "built
+              REST APIs" instead of "backend development". Screening is slow and feedback is
+              nonexistent.</p>
+          </div>
+          <div class="work__block">
+            <h4 class="mono">Solution</h4>
+            <p>Semantic resume-to-job matching with pre-trained transformer embeddings instead
+              of keyword overlap. Any format — including scans — parsed with OCR, scored with
+              a weighted skill-alignment model, returned with a detailed feedback report.</p>
+          </div>
+          <div class="work__block work__block--arch">
+            <h4 class="mono">Architecture</h4>
+            <div class="arch">
+              <div class="arch__node"><span class="mono">01</span><p>Resume upload<small>PDF · DOCX · scan</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">02</span><p>OCR &amp; parsing<small>multi-format</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">03</span><p>Transformer embeddings<small>sentence-transformers</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">04</span><p>Weighted scoring<small>vs. job description</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">05</span><p>Feedback report<small>actionable detail</small></p></div>
+            </div>
+          </div>
+          <div class="work__block">
+            <h4 class="mono">Outcome</h4>
+            <p>Deployed and live — semantic matching that surfaces fit a keyword filter would
+              miss, with actionable feedback for every candidate.</p>
+          </div>
+        </div>
+        <a class="work__link magnetic" href="https://ai-resume-screener-umlq.onrender.com/" target="_blank" rel="noopener">Live demo <span class="work__link-arrow">↗</span></a>
+      </article>
+
+      <!-- P3 -->
+      <article class="work">
+        <span class="work__ghost" aria-hidden="true">03</span>
+        <div class="work__reveal"><h3 class="work__title">AUTOMATED<br>ASSISTANT</h3></div>
+        <p class="work__tag">Local-first voice assistant &amp; automation</p>
+        <p class="work__stack mono">Python / Mistral / Ollama / Neural TTS / Speech recognition</p>
+        <div class="work__blocks">
+          <div class="work__block">
+            <h4 class="mono">Problem</h4>
+            <p>Cloud voice assistants send every word to someone else's server, stop working
+              offline, and cost money per request. A capable assistant shouldn't need any of
+              that.</p>
+          </div>
+          <div class="work__block">
+            <h4 class="mono">Solution</h4>
+            <p>A voice-controlled assistant running a local LLM — Mistral via Ollama — for
+              real-time conversation and code generation, entirely on-device. Speech in,
+              neural TTS out, system automation in between, with a live web dashboard.</p>
+          </div>
+          <div class="work__block work__block--arch">
+            <h4 class="mono">Architecture</h4>
+            <div class="arch">
+              <div class="arch__node"><span class="mono">01</span><p>Voice input<small>microphone stream</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">02</span><p>Speech recognition<small>real-time STT</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">03</span><p>Mistral via Ollama<small>fully local LLM</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">04</span><p>System automation<small>actions &amp; code</small></p></div>
+              <div class="arch__line"></div>
+              <div class="arch__node"><span class="mono">05</span><p>Neural TTS<small>+ live dashboard</small></p></div>
+            </div>
+          </div>
+          <div class="work__block">
+            <h4 class="mono">Outcome</h4>
+            <p>A private, offline-capable assistant — proof that useful AI doesn't have to
+              phone home.</p>
+          </div>
+        </div>
+        <a class="work__link magnetic" href="https://github.com/chiragchauhan07/AI-Automated-Assistent_portfolio" target="_blank" rel="noopener">Open on GitHub <span class="work__link-arrow">↗</span></a>
+      </article>
+    </section>
+
+    <!-- ============ CAPABILITIES (pinned) ============ -->
+    <section class="stack" id="skills">
+      <div class="stack__pin">
+        <header class="chapter chapter--overlay">
+          <h2 class="chapter__title chapter__title--sm"><span class="chapter__mask"><span>CAPABILITIES</span></span></h2>
+        </header>
+        <p class="stack__cat mono" id="stackCat">Language</p>
+        <div class="stack__word" id="stackWord">PYTHON</div>
+        <p class="stack__count mono"><span id="stackIdx">01</span> / <span id="stackTotal">18</span></p>
+        <p class="stack__hint mono">Keep scrolling</p>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="xp" id="experience">
+      <header class="chapter chapter--right">
+        <h2 class="chapter__title"><span class="chapter__mask"><span>EXPERIENCE</span></span></h2>
+      </header>
+      <div class="xp__row">
+        <div class="xp__company">
+          <img class="xp__logo" src="ecoplug.png" alt="Eco Plug Energy India logo">
+          <div>
+            <h3 class="xp__companyName">Eco Plug Energy India <span class="xp__arrow">→</span></h3>
+            <p class="mono xp__duration">Jun — Jul 2026 · 4 weeks</p>
+          </div>
+        </div>
+        <p class="xp__role">AI/ML Intern</p>
+        <p class="xp__desc">Production-style AI assistant for an EV-charging platform — Gemini,
+          FastAPI, RAG over Supabase and vector databases. Shipped backend APIs, auth,
+          WhatsApp integration, and retrieval pipelines that automate customer support.</p>
+      </div>
+      <div class="xp__row">
+        <div class="xp__company">
+          <img class="xp__logo" src="algoshack.webp" alt="Algo Shack Technologies logo">
+          <div>
+            <h3 class="xp__companyName">Algo Shack Technologies <span class="xp__arrow">→</span></h3>
+            <p class="mono xp__duration">Jul 2025 · 2 weeks</p>
+          </div>
+        </div>
+        <p class="xp__role">Intern</p>
+        <p class="xp__desc">Research on RAG, text chunking, and retrieval optimization for
+          context-aware AI applications and LLM-powered products.</p>
+      </div>
+    </section>
+
+    <!-- ============ CREDENTIALS ============ -->
+    <section class="certs" id="certifications">
+      <header class="chapter chapter--center">
+        <h2 class="chapter__title"><span class="chapter__mask"><span class="ghost">CREDENTIALS</span></span></h2>
+      </header>
+      <ul class="certs__list">
+        <li>
+          <div class="cert__brand">
+            <img class="cert__logo" src="oracle.png" alt="" aria-hidden="true">
+            <span class="mono">Oracle</span>
+          </div>
+          <p>OCI 2025 Certified Generative AI Professional</p>
+          <a class="cert__arrow magnetic" href="https://drive.google.com/file/d/138le8dl_z7KRfQXRyou4_xq8hdkcsqpG/view?usp=sharing" target="_blank" rel="noopener" aria-label="View Oracle certificate">↗</a>
+        </li>
+        <li>
+          <div class="cert__brand">
+            <img class="cert__logo" src="microsoft.png" alt="" aria-hidden="true">
+            <span class="mono">Microsoft</span>
+          </div>
+          <p>Azure Developer Associate</p>
+          <a class="cert__arrow magnetic" href="https://drive.google.com/file/d/1UPAvn9Ip9XVYFQAu33laWyyizpyphrTw/view?usp=sharing" target="_blank" rel="noopener" aria-label="View Microsoft certificate">↗</a>
+        </li>
+        <li>
+          <div class="cert__brand">
+            <span class="cert__logo--pair" aria-hidden="true">
+              <img src="microsoft.png" alt="">
+              <img src="linkedin.webp" alt="">
+            </span>
+            <span class="mono">Microsoft × LinkedIn</span>
+          </div>
+          <p>Security Essentials Professional Certificate</p>
+          <a class="cert__arrow magnetic" href="https://drive.google.com/file/d/1kqmSvkQlEAZr0Z-Ik_EsRkbMpzypdaEI/view?usp=sharing" target="_blank" rel="noopener" aria-label="View Microsoft × LinkedIn certificate">↗</a>
+        </li>
+        <li>
+          <div class="cert__brand">
+            <img class="cert__logo cert__logo--invert" src="deloitte.webp" alt="" aria-hidden="true">
+            <span class="mono">Deloitte</span>
+          </div>
+          <p>Data Analytics Job Simulation</p>
+          <a class="cert__arrow magnetic" href="https://drive.google.com/file/d/1Hs5X_JaL9bwuh-dQqQASGC_T9FbFLwRX/view?usp=sharing" target="_blank" rel="noopener" aria-label="View Deloitte certificate">↗</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <h2 class="contact__title">
+        <span class="contact__line"><span>LET'S</span></span>
+        <span class="contact__line contact__line--ghost"><span>SHIP IT.</span></span>
+      </h2>
+      <a class="contact__email" href="mailto:chirag12345chauhan@gmail.com">chirag12345chauhan@gmail.com</a>
+      <div class="icons icons--lg">
+        <a class="icon magnetic" href="https://github.com/chiragchauhan07" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.66.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        </a>
+        <a class="icon magnetic" href="https://linkedin.com/in/chirag-chauhan-344783306" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a class="icon magnetic" href="mailto:chirag12345chauhan@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+        </a>
+        <a class="icon magnetic" href="Chirag_Chauhan_Resume.pdf" target="_blank" rel="noopener" aria-label="Resume">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h7.5L18 7v14.5H6z"/><path d="M13.5 2.5V7H18"/><path d="M9 12h6M9 15.5h6"/></svg>
+        </a>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Open to AI engineering roles —&nbsp;</span><span>Open to AI engineering roles —&nbsp;</span>
+          <span>Open to AI engineering roles —&nbsp;</span><span>Open to AI engineering roles —&nbsp;</span>
+        </div>
+      </div>
+      <footer class="footer mono">
+        <span>© <span id="year"></span> Chirag Chauhan</span>
+        <span>Hand-built — no framework, no template</span>
+      </footer>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
