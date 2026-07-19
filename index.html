@@ -16,7 +16,7 @@
   <!-- Intro -->
   <div class="loader" id="loader" aria-hidden="true">
     <img class="loader__img" id="loaderImg" src="Namaste.png" alt="">
-    <p class="loader__word glitch" id="loaderWord" data-text="नमस्ते">नमस्ते</p>
+    <p class="loader__word glitch" id="loaderWord" data-text="नमस्ते">नमस्ते!</p>
   </div>
 
   <!-- Floating nav -->
@@ -35,14 +35,24 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero">
-      <p class="hero__meta mono">SYSTEMS > DEMOS</p>
+      <p class="hero__meta mono glitch" id="heroMeta" data-text="SYSTEMS &gt; DEMOS">SYSTEMS &gt; DEMOS</p>
       <div class="hero__row">
-        <h1 class="hero__title" aria-label="Chirag Chauhan">
-          <span class="hero__line"><span>CHIRAG</span></span>
-          <span class="hero__line hero__line--ghost"><span>CHAUHAN</span></span>
-        </h1>
+        <div class="hero__intro">
+          <p class="hero__im" id="heroIm">I'm</p>
+          <h1 class="hero__title" aria-label="Chirag Chauhan">
+            <span class="hero__line"><span>CHIRAG</span></span>
+            <span class="hero__line hero__line--ghost"><span>CHAUHAN</span></span>
+          </h1>
+          <p class="hero__greet glitch" id="heroGreet" data-text="">
+            <span id="heroGreetText"></span><span class="hero__caret" id="heroCaret"></span>
+          </p>
+        </div>
         <div class="hero__visual" id="heroVisual" aria-hidden="true">
-          <img src="Hello.png" alt="">
+          <div class="hero__avatarStack" id="heroAvatarStack">
+            <img class="hero__avatarImg hero__avatarImg--base is-active" id="heroAvatarBase" src="Hello.png" alt="">
+            <img class="hero__avatarImg hero__avatarImg--alt" id="heroAvatarAlt" src="avatar_pointing_downwards_aligned.png" alt="">
+          </div>
+          <div class="hero__bubble glitch" id="heroBubble" data-text="">Hi! 👋</div>
         </div>
       </div>
       <div class="marquee hero__marquee" aria-hidden="true">
@@ -56,7 +66,8 @@
     <!-- ============ ABOUT ============ -->
     <section class="manifesto" id="about">
       <header class="chapter">
-        <h2 class="chapter__title chapter__title--glitch" id="aboutTitle" data-text="BUILD THINGS THAT MATTER.">BUILD THINGS <span class="ghost">THAT MATTER.</span></h2>
+        <h2 class="chapter__title chapter__title--glitch" id="aboutTitle" data-text="BUILDING THINGS THAT MATTER.">BUILDING THINGS <span class="ghost">THAT MATTER.</span></h2>
+        <p class="manifesto__subtitle">Crafted with purpose. Built to make an impact.</p>
       </header>
     </section>
 
@@ -88,23 +99,30 @@
               not guessed.</p>
           </div>
           <div class="work__block work__block--arch">
-            <h4 class="mono">Architecture</h4>
-            <div class="arch">
-              <div class="arch__node"><span class="mono">01</span><p>Documents<small>PDF · Web · GitHub · Drive</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">02</span><p>Parser &amp; chunking<small>context-aware splits</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">03</span><p>Embeddings<small>bge-small-en-v1.5</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">04</span><p>Pinecone<small>vector index</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">05</span><p>Hybrid retrieval<small>vector + keyword</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">06</span><p>Cross-encoder rerank<small>precision pass</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">07</span><p>Gemini<small>grounded generation</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">08</span><p>Streaming response<small>with citations</small></p></div>
+            <div class="work__archrow">
+              <div class="arch">
+                <h4 class="mono">Architecture</h4>
+                <div class="arch__node"><span class="mono">01</span><p>Documents<small>PDF · Web · GitHub · Drive</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">02</span><p>Parser &amp; chunking<small>context-aware splits</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">03</span><p>Embeddings<small>bge-small-en-v1.5</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">04</span><p>Pinecone<small>vector index</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">05</span><p>Hybrid retrieval<small>vector + keyword</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">06</span><p>Cross-encoder rerank<small>precision pass</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">07</span><p>Gemini<small>grounded generation</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">08</span><p>Streaming response<small>with citations</small></p></div>
+              </div>
+              <div class="work__media work__media--video" data-media>
+                <video class="work__video" width="960" height="456" muted loop playsinline preload="metadata" aria-label="KnowledgeForge product demo — live document ingestion and cited chat">
+                  <source src="project_assets/knowledgeforge-demo.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
             <p>FastAPI with JWT auth. Supabase for users and metadata. Redis for caching.
               Shipped in Docker.</p>
@@ -138,17 +156,33 @@
               a weighted skill-alignment model, returned with a detailed feedback report.</p>
           </div>
           <div class="work__block work__block--arch">
-            <h4 class="mono">Architecture</h4>
-            <div class="arch">
-              <div class="arch__node"><span class="mono">01</span><p>Resume upload<small>PDF · DOCX · scan</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">02</span><p>OCR &amp; parsing<small>multi-format</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">03</span><p>Transformer embeddings<small>sentence-transformers</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">04</span><p>Weighted scoring<small>vs. job description</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">05</span><p>Feedback report<small>actionable detail</small></p></div>
+            <div class="work__archrow">
+              <div class="arch">
+                <h4 class="mono">Architecture</h4>
+                <div class="arch__node"><span class="mono">01</span><p>Resume upload<small>PDF · DOCX · scan</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">02</span><p>OCR &amp; parsing<small>multi-format</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">03</span><p>Transformer embeddings<small>sentence-transformers</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">04</span><p>Weighted scoring<small>vs. job description</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">05</span><p>Feedback report<small>actionable detail</small></p></div>
+              </div>
+              <div class="work__media work__media--deck" data-media data-gallery="nexus">
+                <button class="work__deck-item" style="--i:0" aria-label="View screenshot 1 of Nexus Talent AI">
+                  <img src="project_assets/nexustalent-hero.webp" alt="Nexus Talent AI — home screen" loading="lazy" decoding="async" width="1600" height="866">
+                </button>
+                <button class="work__deck-item" style="--i:1" aria-label="View screenshot 2 of Nexus Talent AI">
+                  <img src="project_assets/nexustalent-2.webp" alt="Nexus Talent AI — opportunities list" loading="lazy" decoding="async" width="1400" height="754">
+                </button>
+                <button class="work__deck-item" style="--i:2" aria-label="View screenshot 3 of Nexus Talent AI">
+                  <img src="project_assets/nexustalent-3.webp" alt="Nexus Talent AI — role detail" loading="lazy" decoding="async" width="1400" height="756">
+                </button>
+                <button class="work__deck-item" style="--i:3" aria-label="View screenshot 4 of Nexus Talent AI">
+                  <img src="project_assets/nexustalent-4.webp" alt="Nexus Talent AI — match analysis" loading="lazy" decoding="async" width="1400" height="759">
+                </button>
+              </div>
             </div>
           </div>
           <div class="work__block">
@@ -180,17 +214,27 @@
               neural TTS out, system automation in between, with a live web dashboard.</p>
           </div>
           <div class="work__block work__block--arch">
-            <h4 class="mono">Architecture</h4>
-            <div class="arch">
-              <div class="arch__node"><span class="mono">01</span><p>Voice input<small>microphone stream</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">02</span><p>Speech recognition<small>real-time STT</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">03</span><p>Mistral via Ollama<small>fully local LLM</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">04</span><p>System automation<small>actions &amp; code</small></p></div>
-              <div class="arch__line"></div>
-              <div class="arch__node"><span class="mono">05</span><p>Neural TTS<small>+ live dashboard</small></p></div>
+            <div class="work__archrow">
+              <div class="arch">
+                <h4 class="mono">Architecture</h4>
+                <div class="arch__node"><span class="mono">01</span><p>Voice input<small>microphone stream</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">02</span><p>Speech recognition<small>real-time STT</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">03</span><p>Mistral via Ollama<small>fully local LLM</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">04</span><p>System automation<small>actions &amp; code</small></p></div>
+                <div class="arch__line"></div>
+                <div class="arch__node"><span class="mono">05</span><p>Neural TTS<small>+ live dashboard</small></p></div>
+              </div>
+              <div class="work__media work__media--deck" data-media data-gallery="assistant">
+                <button class="work__deck-item" style="--i:0" aria-label="View screenshot 1 of Automated Assistant">
+                  <img src="project_assets/automatedassistant_1.png" alt="Automated Assistant — terminal ready" loading="lazy" decoding="async" width="1919" height="1010">
+                </button>
+                <button class="work__deck-item" style="--i:1" aria-label="View screenshot 2 of Automated Assistant">
+                  <img src="project_assets/automated-assistant.png" alt="Automated Assistant — live conversation" loading="lazy" decoding="async" width="1919" height="1028">
+                </button>
+              </div>
             </div>
           </div>
           <div class="work__block">
@@ -210,7 +254,10 @@
           <h2 class="chapter__title chapter__title--sm"><span class="chapter__mask"><span>CAPABILITIES</span></span></h2>
         </header>
         <p class="stack__cat mono" id="stackCat">Language</p>
-        <div class="stack__word" id="stackWord">PYTHON</div>
+        <div class="stack__wordwrap" id="stackWordwrap">
+          <div class="stack__logo" id="stackLogo" aria-hidden="true"><img id="stackLogoImg" src="" alt=""></div>
+          <div class="stack__word" id="stackWord">PYTHON</div>
+        </div>
         <p class="stack__count mono"><span id="stackIdx">01</span> / <span id="stackTotal">18</span></p>
         <p class="stack__hint mono">Keep scrolling</p>
       </div>
@@ -224,8 +271,9 @@
       <div class="xp__row">
         <div class="xp__company">
           <img class="xp__logo" src="ecoplug.png" alt="Eco Plug Energy India logo">
-          <div>
-            <h3 class="xp__companyName">Eco Plug Energy India <span class="xp__arrow">→</span></h3>
+          <div class="xp__nameWrap">
+            <h3 class="xp__companyName">Eco Plug Energy India</h3>
+            <a class="xp__sitelink" href="https://eeil.in/" target="_blank" rel="noopener">Go to their site <span class="xp__arrow">→</span></a>
             <p class="mono xp__duration">Jun — Jul 2026 · 4 weeks</p>
           </div>
         </div>
@@ -233,18 +281,21 @@
         <p class="xp__desc">Production-style AI assistant for an EV-charging platform — Gemini,
           FastAPI, RAG over Supabase and vector databases. Shipped backend APIs, auth,
           WhatsApp integration, and retrieval pipelines that automate customer support.</p>
+        <span class="xp__cert xp__cert--placeholder">Completion Certification</span>
       </div>
       <div class="xp__row">
         <div class="xp__company">
           <img class="xp__logo" src="algoshack.webp" alt="Algo Shack Technologies logo">
-          <div>
-            <h3 class="xp__companyName">Algo Shack Technologies <span class="xp__arrow">→</span></h3>
+          <div class="xp__nameWrap">
+            <h3 class="xp__companyName">Algo Shack Technologies</h3>
+            <a class="xp__sitelink" href="https://algoshack.com/" target="_blank" rel="noopener">Go to their site <span class="xp__arrow">→</span></a>
             <p class="mono xp__duration">Jul 2025 · 2 weeks</p>
           </div>
         </div>
         <p class="xp__role">Intern</p>
         <p class="xp__desc">Research on RAG, text chunking, and retrieval optimization for
           context-aware AI applications and LLM-powered products.</p>
+        <a class="xp__cert" href="https://drive.google.com/file/d/1zbPfZQz_pBPcnVLSwxi1B6D3FIRv9cU7/view?usp=sharing" target="_blank" rel="noopener">Completion Certification <span class="xp__cert-arrow">↗</span></a>
       </div>
     </section>
 
@@ -289,6 +340,14 @@
           <p>Data Analytics Job Simulation</p>
           <a class="cert__arrow magnetic" href="https://drive.google.com/file/d/1Hs5X_JaL9bwuh-dQqQASGC_T9FbFLwRX/view?usp=sharing" target="_blank" rel="noopener" aria-label="View Deloitte certificate">↗</a>
         </li>
+        <li>
+          <div class="cert__brand">
+            <img class="cert__logo" src="aws_logo_clean.png" alt="" aria-hidden="true">
+            <span class="mono">AWS</span>
+          </div>
+          <p>AWS AI Agents: Cognitive Upgrade and Business Efficiency</p>
+          <a class="cert__arrow magnetic" href="https://drive.google.com/file/d/1zRLh3j3EKXL8GOO1vLv1D6LDOEQWnO2a/view?usp=sharing" target="_blank" rel="noopener" aria-label="View AWS certificate">↗</a>
+        </li>
       </ul>
     </section>
 
@@ -326,6 +385,14 @@
     </section>
 
   </main>
+
+  <!-- Gallery lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous screenshot">←</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next screenshot">→</button>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
