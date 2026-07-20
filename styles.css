@@ -243,6 +243,7 @@ body.is-loaded .hero__line:nth-child(2) span { transition-delay: 0.1s; }
 .hero__visual {
   position: relative;
   flex: none;
+  margin-left: clamp(1rem, 4vw, 3rem);
   pointer-events: none;
   will-change: transform;
 }
@@ -251,7 +252,7 @@ body.is-loaded .hero__line:nth-child(2) span { transition-delay: 0.1s; }
    only opacity ever changes, cross-fading one pose into the other. */
 .hero__avatarStack {
   position: relative;
-  width: min(clamp(190px, 24vw, 430px), 42vh);
+  width: min(clamp(160px, 19vw, 340px), 34vh);
   aspect-ratio: 2 / 3;
   clip-path: inset(100% 0 0 0);
   opacity: 0;
@@ -1033,7 +1034,7 @@ a.xp__cert:hover .xp__cert-arrow { transform: translate(2px, -2px); }
   .cert__brand { flex-basis: 100%; }
   .cert__arrow { margin-left: 0; }
   .hero__row { gap: 0.75rem; }
-  .hero__avatarStack { width: min(112px, 42vh); }
+  .hero__avatarStack { width: min(94px, 34vh); }
   .chapter--right, .chapter--center { text-align: left; }
   .nav { top: 0.75rem; }
   .nav__pill a { padding: 0.45rem 0.7rem; font-size: 0.72rem; }
