@@ -914,7 +914,7 @@ a.xp__cert:hover .xp__cert-arrow { transform: translate(2px, -2px); }
 /* ============ Contact ============ */
 .contact { padding: clamp(5rem, 12vh, 9rem) var(--pad) 0; }
 .contact__title {
-  font-size: clamp(3.4rem, 12.5vw, 12.5rem);
+  font-size: clamp(1.8rem, 5.2vw, 5rem);
   font-weight: 900;
   font-stretch: 125%;
   line-height: 0.88;
