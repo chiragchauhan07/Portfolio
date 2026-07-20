@@ -349,7 +349,7 @@ if (window.gsap && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
 
   // ---- Pinned capabilities: one technology at a time ----
   const techs = [
-    ["PYTHON", "Language", "skills_logos/python.png"],
+    ["PYTHON", "Language", "skills_logos/Python.png"],
     ["SQL", "Language", "skills_logos/sql.png"],
     ["C++", "Language", "skills_logos/c++.webp"],
     ["FASTAPI", "Framework", "skills_logos/fastapi.svg"],
@@ -371,6 +371,16 @@ if (window.gsap && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
     ["GIT", "Tools", "skills_logos/git.svg"],
     ["GITHUB", "Tools", "skills_logos/github.webp"],
   ];
+  // Preload + decode every capability logo up front. setTech() only ever
+  // assigns one <img src> at a time as the user scrolls, so without this the
+  // browser wouldn't start fetching a given logo until the exact moment it's
+  // needed — causing the pop-in this fixes. This is scoped to just these
+  // ~20 small logos, not a global eager-load of every image on the site.
+  techs.forEach(([, , src]) => {
+    const preloadImg = new Image();
+    preloadImg.src = src;
+    if (preloadImg.decode) preloadImg.decode().catch(() => {});
+  });
   const wordEl = document.getElementById("stackWord");
   const catEl = document.getElementById("stackCat");
   const idxEl = document.getElementById("stackIdx");
