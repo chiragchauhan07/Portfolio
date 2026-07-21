@@ -463,15 +463,26 @@ body:not(.is-loaded) .hero__avatarStack { animation-play-state: paused; }
   gap: clamp(3rem, 8vh, 5rem);
 }
 .work__block { max-width: 34rem; }
-.work__block:nth-child(2) { margin-left: 14%; }
+/* Problem & Solution (blocks 1 & 2) share the same edge — see hierarchy rules below. */
+.work__block:nth-child(2) { margin-left: 0; }
 .work__block:nth-child(3) { margin-left: 28%; }
 .work__block:nth-child(4) { margin-left: 14%; }
 .work--alt .work__block { margin-left: auto; }
-.work--alt .work__block:nth-child(2) { margin-right: 14%; }
+.work--alt .work__block:nth-child(2) { margin-right: 0; }
 .work--alt .work__block:nth-child(3) { margin-right: 28%; }
 .work--alt .work__block:nth-child(4) { margin-right: 14%; }
 .work__block h4 { margin-bottom: 0.75rem; }
 .work__block p { color: var(--gray-5); font-size: 1.05rem; }
+
+/* Problem & Solution: aligned pair, lifted contrast/typography over the rest. */
+.work__block:nth-child(1) h4,
+.work__block:nth-child(2) h4 { color: var(--gray-5); }
+.work__block:nth-child(1) p,
+.work__block:nth-child(2) p {
+  color: #d0d0d0;
+  font-size: clamp(1.1rem, 1.45vw, 1.28rem);
+  line-height: 1.55;
+}
 .work__block > p + p, .work__archrow + p { margin-top: 1rem; }
 
 .work__link {
@@ -529,6 +540,9 @@ body:not(.is-loaded) .hero__avatarStack { animation-play-state: paused; }
 }
 .work__media:hover img, .work__media:hover video { transform: scale(1.035); }
 .work__video { aspect-ratio: 960 / 456; background: var(--black); }
+/* KnowledgeForge: video sits shorter than the 8-node arch column beside it —
+   center it on the cross axis so the two columns feel balanced. */
+.work__media--video { align-self: center; }
 
 /* ---- Stacked image deck (multi-screenshot galleries) ---- */
 .work__media--deck {
