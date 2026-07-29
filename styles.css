@@ -521,6 +521,9 @@ body:not(.is-loaded) .hero__avatarStack { animation-play-state: paused; }
 .work__link:hover .work__link-arrow { transform: translate(4px, -4px); }
 .work--alt .work__link { float: right; }
 .work--alt::after { content: ""; display: block; clear: both; }
+/* Projects with two CTAs (e.g. Live demo + GitHub) sit side by side, each
+   keeping its own .work__link spacing/hover — no new button styling. */
+.work__linkRow { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(1.5rem, 3vw, 2.5rem); }
 
 /* ============ Work media (project showcase) ============ */
 .work__archrow {
@@ -556,6 +559,9 @@ body:not(.is-loaded) .hero__avatarStack { animation-play-state: paused; }
 }
 .work__media:hover img, .work__media:hover video { transform: scale(1.035); }
 .work__video { aspect-ratio: 960 / 456; background: var(--black); }
+/* Blueprint's source clip is native 16:9 (not the wide 960:456 crop used by
+   the KnowledgeForge recording) — keep its own ratio so nothing is cropped. */
+.work__video--wide { aspect-ratio: 16 / 9; }
 /* KnowledgeForge: video sits shorter than the 8-node arch column beside it —
    center it on the cross axis so the two columns feel balanced. */
 .work__media--video { align-self: center; }
