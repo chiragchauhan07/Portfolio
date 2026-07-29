@@ -455,6 +455,10 @@ body:not(.is-loaded) .hero__avatarStack { animation-play-state: paused; }
   color: var(--gray-5);
 }
 .work__stack { margin-top: 0.75rem; color: var(--gray-4); }
+/* Longer stack lists (more items than the other projects) wrap onto their
+   own lines instead of running under the giant ghost numeral. Scoped to
+   this modifier only — other projects' single-line stacks are untouched. */
+.work__stack--wrap { max-width: 34vw; }
 
 .work__blocks {
   margin-top: clamp(3.5rem, 10vh, 6.5rem);
@@ -523,7 +527,8 @@ body:not(.is-loaded) .hero__avatarStack { animation-play-state: paused; }
 .work--alt::after { content: ""; display: block; clear: both; }
 /* Projects with two CTAs (e.g. Live demo + GitHub) sit side by side, each
    keeping its own .work__link spacing/hover — no new button styling. */
-.work__linkRow { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(1.5rem, 3vw, 2.5rem); }
+.work__linkRow { display: flex; flex-direction: column; align-items: flex-start; }
+.work__linkRow .work__link:nth-child(2) { margin-top: 0.75rem; }
 
 /* ============ Work media (project showcase) ============ */
 .work__archrow {
@@ -1067,6 +1072,7 @@ a.xp__cert:hover .xp__cert-arrow { transform: translate(2px, -2px); }
   .lightbox__nav--next { right: 0.5rem; }
   .lightbox__close { top: 0.75rem; right: 0.75rem; }
   .work__ghost { font-size: 42vw; }
+  .work__stack--wrap { max-width: 24vw; }
   .stack__word { white-space: normal; }
   .cert__brand { flex-basis: 100%; }
   .cert__arrow { margin-left: 0; }
