@@ -140,52 +140,54 @@
       <article class="work">
         <span class="work__ghost" aria-hidden="true">02</span>
         <div class="work__reveal"><h3 class="work__title">BLUEPRINT</h3></div>
-        <p class="work__tag">AI-powered hiring &amp; candidate evaluation platform</p>
-        <p class="work__stack work__stack--wrap mono">React / TypeScript / FastAPI / Python / Supabase / PostgreSQL / OpenAI / Claude Code / MCP / Tailwind CSS / Vercel</p>
+        <p class="work__tag">Deterministic MCP server for AI repository context</p>
+        <p class="work__stack mono">Python / MCP / pytest / ruff / mypy</p>
         <div class="work__blocks">
           <div class="work__block">
             <h4 class="mono">Problem</h4>
-            <p>Recruiters screen candidates from resumes and gut feeling — slow, inconsistent,
-              and biased toward keywords rather than real communication, reasoning, and
-              technical ability.</p>
+            <p>AI coding agents re-discover a codebase's structure from scratch every session —
+              burning time and tokens scanning files, parsing imports, and re-guessing an
+              architecture they already saw yesterday.</p>
           </div>
           <div class="work__block">
             <h4 class="mono">Solution</h4>
-            <p>An AI hiring platform that conducts automated voice interviews and evaluates
-              communication, technical ability, confidence, and reasoning — turning every
-              conversation into a structured, actionable hiring report.</p>
+            <p>A repository intelligence engine that analyzes a codebase deterministically —
+              static analysis only, no LLM in the core — and generates a persistent, AI-native
+              Knowledge Base exposed to any MCP-compatible coding agent over the Model Context
+              Protocol.</p>
           </div>
           <div class="work__block work__block--arch">
             <div class="work__archrow">
               <div class="arch">
                 <h4 class="mono">Architecture</h4>
-                <div class="arch__node"><span class="mono">01</span><p>Resume &amp; profile intake<small>upload · parsing</small></p></div>
+                <div class="arch__node"><span class="mono">01</span><p>Repository scan<small>file walk</small></p></div>
                 <div class="arch__line"></div>
-                <div class="arch__node"><span class="mono">02</span><p>AI voice interview<small>real-time conversation</small></p></div>
+                <div class="arch__node"><span class="mono">02</span><p>Project detection<small>languages · frameworks · tooling</small></p></div>
                 <div class="arch__line"></div>
-                <div class="arch__node"><span class="mono">03</span><p>Speech &amp; signal analysis<small>confidence · reasoning</small></p></div>
+                <div class="arch__node"><span class="mono">03</span><p>Python intelligence<small>AST · routes · models · imports</small></p></div>
                 <div class="arch__line"></div>
-                <div class="arch__node"><span class="mono">04</span><p>LLM evaluation<small>OpenAI · Claude Code · MCP</small></p></div>
+                <div class="arch__node"><span class="mono">04</span><p>Knowledge Base generation<small>12 cross-referenced docs</small></p></div>
                 <div class="arch__line"></div>
-                <div class="arch__node"><span class="mono">05</span><p>Structured hiring report<small>actionable insights</small></p></div>
+                <div class="arch__node"><span class="mono">05</span><p>MCP server<small>6 tools · stdio transport</small></p></div>
                 <div class="arch__line"></div>
-                <div class="arch__node"><span class="mono">06</span><p>Recruiter dashboard<small>Supabase · PostgreSQL</small></p></div>
+                <div class="arch__node"><span class="mono">06</span><p>Incremental cache<small>reuse unchanged, byte-identical</small></p></div>
               </div>
               <div class="work__media work__media--video" data-media>
-                <video class="work__video work__video--wide" width="960" height="540" muted loop playsinline preload="metadata" aria-label="Blueprint product demo — AI voice interview and hiring report walkthrough">
+                <video class="work__video work__video--wide" width="960" height="540" muted loop playsinline preload="metadata" aria-label="Blueprint product demo — generating an AI-native repository Knowledge Base">
                   <source src="project_assets/blueprint-demo.mp4" type="video/mp4">
                   Your browser doesn't support embedded video.
                 </video>
               </div>
             </div>
-            <p>FastAPI and Supabase/PostgreSQL on the backend, React + TypeScript and Tailwind
-              CSS on the frontend, deployed on Vercel. MCP server integration keeps the AI
-              workflow modular and production-ready.</p>
+            <p>Python 3.11+, standard library first — pathlib, tomllib, ast. The MCP Python SDK
+              is the only runtime dependency, scoped to the server layer. Tested with pytest,
+              linted with ruff and mypy.</p>
           </div>
           <div class="work__block">
             <h4 class="mono">Outcome</h4>
-            <p>A production-ready hiring platform — automated interviews, consistent AI-driven
-              evaluation, and structured reports that cut manual screening time.</p>
+            <p>A production-ready MCP server — deterministic, byte-identical output on every
+              run, giving AI coding agents instant repository context instead of re-scanning
+              from scratch.</p>
           </div>
         </div>
         <div class="work__linkRow">
